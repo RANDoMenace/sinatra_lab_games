@@ -1,0 +1,24 @@
+<h2>Games</h2>
+
+
+<ul class="games">
+  <% @games.each do |game| %>
+    <li>
+      <strong>
+        <a href="/games/<%=games.id %>"><%= games.to_s %></a>
+      </strong>
+
+
+      <a href="/games/<%= games.id %>/edit">
+        Edit
+      </a>
+
+
+      <a href="#">Delete</a>
+    </li>
+    <% end %>
+  </ul>
+
+</hr>
+
+<a class="btn" href="/games/new">Add Game</a>
