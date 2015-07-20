@@ -1,4 +1,4 @@
-class Games < Sinatra::Base
+class GamesApp < Sinatra::Base
 
   # root route
   get "/" do
@@ -23,17 +23,17 @@ class Games < Sinatra::Base
   end
 
   #create
-  post '/games' do
+  post '/games/new' do
     @game = Game.new(params[:game])
     if @game.save
-      redirect("/games/#{@games.id}")
+      redirect("/games/#{@game.id}")
     else
       erb(:"games/new")
     end
   end
 
   #show
-  get '/songs/:id' do
+  get '/games/:id' do
     @game = Game.find(params[:id])
     erb(:"games/show")
   end
@@ -45,7 +45,7 @@ class Games < Sinatra::Base
   end
 
   #update
-  put '/song/:id' do
+  put '/games/:id' do
     @game = Game.find(params[:id])
     if @game.update_attributes(params[:game])
       redirect("/games")

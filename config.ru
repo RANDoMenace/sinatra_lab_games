@@ -8,4 +8,5 @@ require './models/game'
 #Controllers
 require './app'
 
-run SinatraGamesApp
+use Rack::MethodOverride
+run GamesApp

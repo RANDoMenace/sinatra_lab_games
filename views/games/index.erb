@@ -5,11 +5,11 @@
   <% @games.each do |game| %>
     <li>
       <strong>
-        <a href="/games/<%=games.id %>"><%= games.to_s %></a>
+        <a href="/games/<%=game.id %>"><%= game.to_s %></a>
       </strong>
 
 
-      <a href="/games/<%= games.id %>/edit">
+      <a href="/games/<%= game.id %>/edit">
         Edit
       </a>
 
